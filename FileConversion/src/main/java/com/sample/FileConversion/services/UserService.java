@@ -86,7 +86,7 @@ public class UserService {
         else{
             User userDetail = user.get();
             if(encoder.matches(loginUser.getPassword(), userDetail.getPassword())){
-            return ResponseEntity.status(HttpStatus.FOUND).body(user.get());
+            return ResponseEntity.status(HttpStatus.OK).body(user.get());
             }
             else{
                 return ResponseEntity.status(400).body("Password Did Not Matched");
